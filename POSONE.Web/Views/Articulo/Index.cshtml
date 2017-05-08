@@ -1,0 +1,28 @@
+@using POSONE.Model
+@using System.Collections.Generic
+
+@model IList<POSONE.Model.Models.Articulo>
+
+@{
+        ViewBag.Title = "Item List";
+}
+<h2>Product List</h2>
+
+<table style="width:100%">
+<tr>
+        <th>Id</th>
+        <th>Articulo</th>
+        <th>Cantidad</th>
+</tr>
+
+@foreach(var item in Model)
+{
+        <tr>
+                <td>@item.ArticuloId</td>
+                <td>@item.Descripcion</td>
+                <td>@item.Cantidad</td>
+        </tr>
+}
+
+
+</table>
