@@ -13,14 +13,20 @@
         <th>Id</th>
         <th>Articulo</th>
         <th>Cantidad</th>
+        <th>Action</th>
 </tr>
+@Html.ActionLink("Crear Articulo", "Edit") 
 
 @foreach(var item in Model)
 {
         <tr>
                 <td>@item.ArticuloId</td>
-                <td>@item.Descripcion</td>
+                <td>@Html.ActionLink(item.Descripcion, "Detail", new { id=item.ArticuloId }) </td>
                 <td>@item.Cantidad</td>
+                <td>
+                    @Html.ActionLink("Detalle", "Detail", new { id=item.ArticuloId }) |    
+                    @Html.ActionLink("Eliminar", "Delete", new { id=item.ArticuloId })
+                </td>
         </tr>
 }
 

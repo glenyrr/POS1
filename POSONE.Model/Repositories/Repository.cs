@@ -38,6 +38,11 @@ namespace POSONE.Model.Repositories
            return Context.Set<TEntity>().Find(id);
         }
 
+        TEntity IRepository<TEntity>.Get(string id)
+        {
+           return Context.Set<TEntity>().Find(id);
+        }
+
         IEnumerable<TEntity> IRepository<TEntity>.GetAll()
         {
             return Context.Set<TEntity>().ToList();

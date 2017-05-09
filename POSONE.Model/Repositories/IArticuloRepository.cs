@@ -3,7 +3,7 @@ using POSONE.Model.Models;
 
 namespace POSONE.Model.Repositories
 {
-    public interface IArticuloRepository
+    public interface IArticuloRepository: IRepository<Articulo>
     {
          IEnumerable<Articulo> GetTopSellingArticulo(int count);
          IEnumerable<Articulo> GetArticuloByCategory(string category);
