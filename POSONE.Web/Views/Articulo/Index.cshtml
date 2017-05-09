@@ -1,7 +1,7 @@
 @using POSONE.Model
 @using System.Collections.Generic
 
-@model IList<POSONE.Model.Models.Articulo>
+@model IList<POSONE.Model.Entities.Articulo>
 
 @{
         ViewBag.Title = "Item List";
@@ -10,7 +10,7 @@
 
 <table style="width:100%">
 <tr>
-        <th>Id</th>
+        <th>Articulo Id</th>
         <th>Articulo</th>
         <th>Cantidad</th>
         <th>Action</th>
@@ -20,12 +20,12 @@
 @foreach(var item in Model)
 {
         <tr>
-                <td>@item.ArticuloId</td>
-                <td>@Html.ActionLink(item.Descripcion, "Detail", new { id=item.ArticuloId }) </td>
-                <td>@item.Cantidad</td>
+                <td>@item.Id</td>
+                <td>@Html.ActionLink(item.DescripcionLarga, "Detail", new { id=item.Id }) </td>
+                <td>@item.CostoPromedio</td>
                 <td>
-                    @Html.ActionLink("Detalle", "Detail", new { id=item.ArticuloId }) |    
-                    @Html.ActionLink("Eliminar", "Delete", new { id=item.ArticuloId })
+                    @Html.ActionLink("Detalle", "Detail", new { id=item.Id }) |    
+                    @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
                 </td>
         </tr>
 }

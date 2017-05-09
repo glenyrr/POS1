@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using POSONE.Model.Models;
+using POSONE.Model.Entities;
 
 namespace POSONE.Model.Repositories
 {
     public class ArticuloRepository : Repository<Articulo>, IArticuloRepository
     {
 
-        public ArticuloRepository(PosOneDbContext context) : base(context)
+        public ArticuloRepository(POS1Context context) : base(context)
         {
             
         }
@@ -22,19 +22,19 @@ namespace POSONE.Model.Repositories
                    .ToList(); 
         }
 
-        IEnumerable<Articulo> IArticuloRepository.GetArticuloByCategory(string category)
+        IEnumerable<Articulo> IArticuloRepository.GetArticuloByCategory(int? categoryId)
         {
-             return PlutoContext.Articulo.Where(q=> q.Categoria == category).OrderByDescending(c=> c.Precio).ToList();
+             return PlutoContext.Articulo.Where(q=> q.CategoriaId == categoryId).OrderByDescending(c=> c.DescripcionLarga).ToList();
         }
 
         IEnumerable<Articulo> IArticuloRepository.GetTopSellingArticulo(int count)
         {
-            return PlutoContext.Articulo.OrderByDescending(c=> c.Precio).Take(count).ToList();
+            return PlutoContext.Articulo.OrderByDescending(c=> c.CostoPromedio).Take(count).ToList();
         }
 
-        public PosOneDbContext PlutoContext
+        public POS1Context PlutoContext
         {
-            get {return Context as PosOneDbContext;} 
+            get {return Context as POS1Context;} 
         }
     }
 }

@@ -1,13 +1,13 @@
 using System;
-using POSONE.Model.Models;
+using POSONE.Model.Entities;
 using POSONE.Model.Repositories;
 
 namespace POSONE.Model.UnitOfWorks
 {
     public class UnitOfWork : IUnitOfWork
     {
-         private readonly PosOneDbContext _context;
-        public UnitOfWork(PosOneDbContext context)
+         private readonly POS1Context _context;
+        public UnitOfWork(POS1Context context)
         {
             _context = context;
             Articulo = new ArticuloRepository(_context);
@@ -15,7 +15,7 @@ namespace POSONE.Model.UnitOfWorks
 
         public UnitOfWork()
         {
-            _context = new PosOneDbContext();
+            _context = new POS1Context();
             Articulo = new ArticuloRepository(_context);
         }
      
