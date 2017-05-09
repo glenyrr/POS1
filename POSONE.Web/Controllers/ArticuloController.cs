@@ -20,8 +20,18 @@ namespace POSONE.Web.Controllers
 
         public IActionResult Edit(string id)
         {
-           
+           if (string.IsNullOrEmpty(id))
+           {
+               return StatusCode(400);
+           }
+
            var model = uOW.Articulo.Get(id);
+
+           if (model == null)
+           {
+               return NotFound("No se encontro el Articulo");
+           }
+
             return View(model);
         
         }
