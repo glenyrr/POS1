@@ -1,4 +1,4 @@
-@model POSONE.Model.Models.Articulo
+@model POSONE.Model.Entities.Articulo
 
 @{
     ViewBag.Title = "Detalle de Articulo";
@@ -7,69 +7,18 @@
 
 <h2>Detalle de Articulo</h2>
 
-@Html.ActionLink("Editar", "Edit",new {id=Model.ArticuloId}) 
+@Html.ActionLink("Editar", "Edit",new {id=Model.Id}) 
 
 <div>
     <div>    
-        @Html.LabelFor(model => model.ArticuloId)
-        @Html.DisplayFor(model => model.ArticuloId)
+        @Html.LabelFor(model => model.Id)
+        @Html.DisplayFor(model => model.Id)
     </div>
     <div>    
         @Html.LabelFor(model => model.Descripcion)
         @Html.DisplayFor(model => model.Descripcion)
     </div>
 
-    <div>    
-        @Html.LabelFor(model => model.TipoArticulo)
-        @Html.DisplayFor(model => model.TipoArticulo)
-    </div>
-
-    <div>    
-        @Html.LabelFor(model => model.Categoria)
-        @Html.DisplayFor(model => model.Categoria)
-    </div>
-
-    <div>    
-        @Html.LabelFor(model => model.Costo)
-        @Html.DisplayFor(model => model.Costo)
-    </div>
-
-      <div>    
-        @Html.LabelFor(model => model.Precio)
-        @Html.DisplayFor(model => model.Precio)
-    </div>
-
-      <div>    
-        @Html.LabelFor(model => model.Precio1)
-        @Html.DisplayFor(model => model.Precio1)
-    </div>
-
-     <div>    
-        @Html.LabelFor(model => model.IsvTipo)
-        @Html.DisplayFor(model => model.IsvTipo)
-    </div>
-
-    <div>    
-        @Html.LabelFor(model => model.Isvincluido)
-        @Html.DisplayFor(model => model.Isvincluido)
-    </div>
-
-    <div>    
-        @Html.LabelFor(model => model.CantidadMayoreo)
-        @Html.DisplayFor(model => model.CantidadMayoreo)
-    </div>
-
-    <div>    
-        @Html.LabelFor(model => model.Cantidad)
-        @Html.DisplayFor(model => model.Cantidad)
-    </div>
-
-    <div>    
-        @Html.LabelFor(model => model.Descontinuado)
-        @Html.DisplayFor(model => model.Descontinuado)
-    </div>
-
-
 </div>
 
-@Html.ActionLink("Listado Productos", "Index") 
+@Html.ActionLink("Listado de Articulos", "Index") 

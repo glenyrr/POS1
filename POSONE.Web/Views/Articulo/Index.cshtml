@@ -6,29 +6,33 @@
 @{
         ViewBag.Title = "Item List";
 }
-<h2>Product List</h2>
 
-<table style="width:100%">
-<tr>
-        <th>Articulo Id</th>
-        <th>Articulo</th>
-        <th>Cantidad</th>
-        <th>Action</th>
-</tr>
-@Html.ActionLink("Crear Articulo", "Edit") 
 
+<h2>Listado de Articulos</h2>
+
+@Html.ActionLink("Crear Articulo", "Create") 
+<table class="table table-hover table-bordered" >
+        <thead>
+                <th>Articulo Id</th>
+                <th>Articulo</th>
+                <th>Cantidad</th>
+                <th>Action</th>
+        </theader>
+
+
+<tbody>
 @foreach(var item in Model)
 {
-        <tr>
-                <td>@item.Id</td>
-                <td>@Html.ActionLink(item.DescripcionLarga, "Detail", new { id=item.Id }) </td>
-                <td>@item.CostoPromedio</td>
-                <td>
-                    @Html.ActionLink("Detalle", "Detail", new { id=item.Id }) |    
-                    @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
-                </td>
-        </tr>
+    <tr>
+         <td>@item.Id</td>
+         <td>@Html.ActionLink(item.DescripcionLarga, "Detail", new { id=item.Id }) </td>
+         <td>@item.CostoPromedio</td>
+         <td>
+              @Html.ActionLink("Detalle", "Detail", new { id=item.Id }) |    
+              @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
+         </td>
+    </tr>
 }
-
+</tbody>
 
 </table>
