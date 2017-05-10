@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using POSONE.Model;
+using POSONE.Model.Entities;
 using POSONE.Model.UnitOfWorks;
 
 namespace POSONE.Web.Controllers
@@ -16,6 +17,28 @@ namespace POSONE.Web.Controllers
            
             var articulos = uOW.Articulo.GetTopSellingArticulo(20);
             return View(articulos);
+        }
+
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // Add a new Object via POST Request
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Articulo articulo)
+        {
+            //Checking if the data is valid
+            if (ModelState.IsValid)
+            {
+                   uOW.Articulo.Add(articulo);
+                   // Save Changes and return to index list
+                   uOW.Complete();
+                   return Redirect("Index"); 
+            }
+            return View(articulo);
         }
 
         public IActionResult Edit(string id)
@@ -47,7 +70,7 @@ namespace POSONE.Web.Controllers
         public IActionResult Delete(string id)
         {
            
-            return Content( id + "Sorry!, We are Under Construction Here!");
+            return Content( id + " Sorry!, We are Under Construction Here!");
         }
     }
 }
