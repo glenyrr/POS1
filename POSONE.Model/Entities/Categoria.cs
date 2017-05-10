@@ -3,16 +3,15 @@ using System.Collections.Generic;
 
 namespace POSONE.Model.Entities
 {
-    public partial class Isv
+    public partial class Categoria
     {
-        public Isv()
+        public Categoria()
         {
             Articulo = new HashSet<Articulo>();
         }
 
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public decimal? IsvPorcentaje { get; set; }
 
         public virtual ICollection<Articulo> Articulo { get; set; }
     }

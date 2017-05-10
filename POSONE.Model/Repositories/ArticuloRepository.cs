@@ -6,14 +6,14 @@ using POSONE.Model.Entities;
 
 namespace POSONE.Model.Repositories
 {
+    
     public class ArticuloRepository : Repository<Articulo>, IArticuloRepository
     {
-
-        public ArticuloRepository(POS1Context context) : base(context)
+         public ArticuloRepository(POS1DbContext context) : base(context)
         {
             
         }
-        IEnumerable<Articulo> IArticuloRepository.GetArticuloAllInclude(int pageIndex, int pageSize = 10)
+        IEnumerable<Articulo> IArticuloRepository.GetArticuloAllInclude(int pageIndex, int pageSize )
         {
             return PlutoContext.Articulo
                    .OrderBy(o=> o.Descripcion)
@@ -32,9 +32,11 @@ namespace POSONE.Model.Repositories
             return PlutoContext.Articulo.OrderByDescending(c=> c.CostoPromedio).Take(count).ToList();
         }
 
-        public POS1Context PlutoContext
+        public POS1DbContext PlutoContext
         {
-            get {return Context as POS1Context;} 
+            get {return Context as POS1DbContext;} 
         }
+     
+
     }
 }

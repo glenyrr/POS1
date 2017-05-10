@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using POSONE.Model;
 using POSONE.Model.Entities;
 using POSONE.Model.UnitOfWorks;
+using POSONE.Web.ViewModels;
 
 namespace POSONE.Web.Controllers
 {
@@ -22,7 +23,15 @@ namespace POSONE.Web.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var articuloViewModel = new ArticuloViewModel();
+            articuloViewModel.Categorias = uOW.Categoria.GetAll();
+            articuloViewModel.Tipos = uOW.Tipo.GetAll();
+            articuloViewModel.Marcas = uOW.Marca.GetAll();
+            articuloViewModel.Isvs = uOW.Isv.GetAll();
+            articuloViewModel.UnidadesMedida = uOW.UnidadMedida.GetAll();
+
+
+            return View(articuloViewModel);
         }
 
         // Add a new Object via POST Request

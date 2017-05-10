@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace POSONE.Model.Entities
 {
-    public partial class CategoriaArticulo
+    public partial class Marca
     {
-        public CategoriaArticulo()
+        public Marca()
         {
             Articulo = new HashSet<Articulo>();
         }
 
-        public int CategoriaArticuloId { get; set; }
-        public string Categoria { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
         public virtual ICollection<Articulo> Articulo { get; set; }
     }

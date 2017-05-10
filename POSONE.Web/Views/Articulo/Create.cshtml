@@ -1,4 +1,4 @@
-@model POSONE.Model.Entities.Articulo
+@model POSONE.Web.ViewModels.ArticuloViewModel
 
 @{
     ViewBag.Title = "Modificacion de Articulo";
@@ -23,8 +23,32 @@
         @Html.TextBoxFor(m => m.DescripcionLarga, new {@class = "form-control"})
     </div>
 
+     <div class="form-group">    
+        @Html.LabelFor(m => m.MarcaId)
+        @Html.DropDownListFor(m=> m.MarcaId, new SelectList(Model.Marcas,"Id","Nombre"),"",new {@class="form-control"})
+    </div>
+
+    <div class="form-group">    
+        @Html.LabelFor(m => m.Umid)
+        @Html.DropDownListFor(m => m.Umid, new SelectList(Model.UnidadesMedida, "Id","Codigo"),"",new {@class = "form-control"})
+    </div>
 
 
+    <div class="form-group">    
+        @Html.LabelFor(m => m.CategoriaId)
+        @Html.DropDownListFor(m => m.CategoriaId, new SelectList(Model.Categorias, "Id","Nombre"),"",new {@class = "form-control"})
+    </div>
+
+
+     <div class="form-group">    
+        @Html.LabelFor(m => m.TipoId)
+        @Html.DropDownListFor(m=> m.TipoId, new SelectList(Model.Tipos,"Id","Nombre"),"",new {@class="form-control"})
+    </div>
+
+      <div class="form-group">    
+        @Html.LabelFor(m => m.IsvId)
+        @Html.DropDownListFor(m=> m.IsvId, new SelectList(Model.Isvs, "Id","Nombre"),"",new {@class="form-control"})
+    </div>
 </form>
 
 

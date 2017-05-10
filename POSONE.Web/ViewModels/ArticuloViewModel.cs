@@ -1,9 +1,9 @@
-﻿using System;
 using System.Collections.Generic;
+using POSONE.Model.Entities;
 
-namespace POSONE.Model.Entities
+namespace POSONE.Web.ViewModels
 {
-    public partial class Articulo
+    public class ArticuloViewModel
     {
         public string Id { get; set; }
         public string Descripcion { get; set; }
@@ -18,10 +18,16 @@ namespace POSONE.Model.Entities
         public decimal PrecioVenta { get; set; }
         public bool Activo { get; set; }
 
-        public virtual Categoria Categoria { get; set; }
-        public virtual Isv Isv { get; set; }
-        public virtual Marca Marca { get; set; }
-        public virtual Tipo Tipo { get; set; }
-        public virtual UnidadMedida Um { get; set; }
+        public IEnumerable<Categoria> Categorias {get;set;}
+        public IEnumerable<Tipo> Tipos {get;set;}
+
+        public IEnumerable<Marca> Marcas {get;set;}
+        public IEnumerable<Isv> Isvs {get;set;}
+
+        public IEnumerable<UnidadMedida> UnidadesMedida {get;set;}
+
+
+
+
     }
 }
