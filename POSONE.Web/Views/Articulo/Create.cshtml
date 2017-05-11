@@ -49,6 +49,28 @@
         @Html.LabelFor(m => m.IsvId)
         @Html.DropDownListFor(m=> m.IsvId, new SelectList(Model.Isvs, "Id","Nombre"),"",new {@class="form-control"})
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m=> m.IncluyeImpuesto)
+        @Html.CheckBoxFor(m=> m.IncluyeImpuesto)
+    </div>
+
+     <div class="form-group">    
+        @Html.LabelFor(m => m.CostoPromedio)
+        @Html.TextBoxFor(m => m.CostoPromedio, new {@class = "form-control"})
+    </div>
+
+     <div class="form-group">    
+        @Html.LabelFor(m => m.PrecioVenta)
+        @Html.TextBoxFor(m => m.PrecioVenta, new {@class = "form-control"})
+    </div>
+
+     <div class="form-group">
+        @Html.LabelFor(m=> m.Activo)
+        @Html.CheckBoxFor(m=> m.Activo)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
 
