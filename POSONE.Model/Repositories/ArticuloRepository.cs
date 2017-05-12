@@ -13,7 +13,7 @@ namespace POSONE.Model.Repositories
         {
             
         }
-        IEnumerable<Articulo> IArticuloRepository.GetArticuloAllInclude(int pageIndex, int pageSize )
+        IEnumerable<Articulo> IArticuloRepository.GetArticulosByPage(int pageIndex, int pageSize )
         {
             return PlutoContext.Articulo
                    .OrderBy(o=> o.Descripcion)
@@ -32,6 +32,20 @@ namespace POSONE.Model.Repositories
             return PlutoContext.Articulo.OrderByDescending(c=> c.CostoPromedio).Take(count).ToList();
         }
 
+         Articulo IArticuloRepository.GetArticuloAllIncluded(string id)
+         {
+             return PlutoContext.Articulo
+             .Include("Categoria")
+             .Include("Isv")
+             .Include("Marca")
+              .Include("Tipo")
+              .Include("Um")
+             .FirstOrDefault(a=> a.Id == id);
+             
+
+         }
+
+      
         public POS1DbContext PlutoContext
         {
             get {return Context as POS1DbContext;} 

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using POSONE.Application.Services;
 using POSONE.Model;
 using POSONE.Model.Entities;
 using POSONE.Model.UnitOfWorks;
@@ -9,6 +10,7 @@ namespace POSONE.Web.Controllers
     public class ArticuloController:Controller
     {
         private IUnitOfWork uOW ;
+        private AppService appService;
         public ArticuloController()
         {
             uOW = new UnitOfWork();
@@ -92,7 +94,7 @@ namespace POSONE.Web.Controllers
 
         public IActionResult Detail(string id)
         {
-            var model = uOW.Articulo.Get(id);
+            var model = appService.GetArticuloAllIncluded(id);
             return View(model);
         }
 

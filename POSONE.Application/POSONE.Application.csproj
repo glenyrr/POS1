@@ -4,4 +4,7 @@
     <TargetFramework>netcoreapp1.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\POSONE.Model\POSONE.Model.csproj"/>
+  </ItemGroup>
 </Project>
