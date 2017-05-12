@@ -37,17 +37,38 @@ namespace POSONE.Web.Controllers
         // Add a new Object via POST Request
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Articulo articulo)
+        public IActionResult Create(ArticuloViewModel articuloViewModel)
         {
-            //Checking if the data is valid
-            if (ModelState.IsValid)
+
+            if (!ModelState.IsValid)
             {
-                   uOW.Articulo.Add(articulo);
-                   // Save Changes and return to index list
-                   uOW.Complete();
-                   return Redirect("Index"); 
+                articuloViewModel.Categorias = uOW.Categoria.GetAll();
+                articuloViewModel.Tipos = uOW.Tipo.GetAll();
+                articuloViewModel.Marcas = uOW.Marca.GetAll();
+                articuloViewModel.Isvs = uOW.Isv.GetAll();
+                articuloViewModel.UnidadesMedida = uOW.UnidadMedida.GetAll();
+                return View("Create",articuloViewModel);
             }
-            return View(articulo);
+
+            //Mapping the ViewModel with the Entity
+            var articulo = new Articulo{
+                Descripcion = articuloViewModel.Descripcion,
+                DescripcionLarga = articuloViewModel.DescripcionLarga,
+                MarcaId = articuloViewModel.MarcaId,
+                CategoriaId = articuloViewModel.CategoriaId,
+                TipoId = articuloViewModel.TipoId,
+                Umid = articuloViewModel.Umid,
+                IsvId = articuloViewModel.IsvId,
+                IncluyeImpuesto = articuloViewModel.IncluyeImpuesto,
+                CostoPromedio = articuloViewModel.CostoPromedio,
+                PrecioVenta = articuloViewModel.PrecioVenta,
+                Activo = articuloViewModel.Activo
+            };
+                   
+            uOW.Articulo.Add(articulo);
+            // Save Changes and return to index list
+            uOW.Complete();
+            return Redirect("Index"); 
         }
 
         public IActionResult Edit(string id)

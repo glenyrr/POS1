@@ -50,3 +50,7 @@ textarea {
 }
 
 /*OverWrite the Bootstrap Style*/
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}

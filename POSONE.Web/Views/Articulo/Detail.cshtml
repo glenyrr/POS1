@@ -9,16 +9,67 @@
 
 @Html.ActionLink("Editar", "Edit",new {id=Model.Id}) 
 
-<div>
-    <div>    
+<form>
+  <div class="form-group">
         @Html.LabelFor(model => model.Id)
         @Html.DisplayFor(model => model.Id)
     </div>
-    <div>    
+    
+    <div class="form-group">    
         @Html.LabelFor(model => model.Descripcion)
         @Html.DisplayFor(model => model.Descripcion)
     </div>
 
-</div>
+    <div class="form-group">    
+        @Html.LabelFor(model => model.DescripcionLarga)
+        @Html.DisplayFor(model => model.DescripcionLarga)
+    </div>
+
+    <div class="form-group">    
+        @Html.LabelFor(model => model.MarcaId)
+        @Html.DisplayFor(model => model.MarcaId)
+    </div>
+
+    <div class="form-group">    
+        @Html.LabelFor(model => model.CategoriaId)
+        @Html.DisplayFor(model => model.CategoriaId)
+    </div>
+
+    <div class="form-group">    
+        @Html.LabelFor(model => model.TipoId)
+        @Html.DisplayFor(model => model.TipoId)
+    </div>
+
+    <div class="form-group">    
+        @Html.LabelFor(model => model.Umid)
+        @Html.DisplayFor(model => model.Umid)
+    </div>
+
+    <div class="form-group">    
+        @Html.LabelFor(model => model.IsvId)
+        @Html.DisplayFor(model => model.IsvId)
+    </div>
+
+    <div class="form-group">    
+        @Html.LabelFor(model => model.IncluyeImpuesto)
+        @Html.DisplayFor(model => model.IncluyeImpuesto)
+    </div>
+
+   <div class="form-group">    
+        @Html.LabelFor(model => model.CostoPromedio)
+        @Html.DisplayFor(model => model.CostoPromedio)
+    </div>
+
+   <div class="form-group">    
+        @Html.LabelFor(model => model.PrecioVenta)
+        @Html.DisplayFor(model => model.PrecioVenta)
+    </div>
+
+  <div class="form-group">    
+        @Html.LabelFor(model => model.Activo)
+        @Html.DisplayFor(model => model.Activo)
+    </div>
+
+</form>
 
 @Html.ActionLink("Listado de Articulos", "Index") 
