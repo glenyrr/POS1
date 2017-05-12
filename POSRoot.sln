@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSONE.Model", "POSONE.Mode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSONE.Web", "POSONE.Web\POSONE.Web.csproj", "{D7D9FB4F-F625-4FF7-A7A6-35DFFD3DE83D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSONE.Application", "POSONE.Application\POSONE.Application.csproj", "{256D64E4-6A59-411B-9009-BAD1FB4C820D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{D7D9FB4F-F625-4FF7-A7A6-35DFFD3DE83D}.Release|x64.Build.0 = Release|x64
 		{D7D9FB4F-F625-4FF7-A7A6-35DFFD3DE83D}.Release|x86.ActiveCfg = Release|x86
 		{D7D9FB4F-F625-4FF7-A7A6-35DFFD3DE83D}.Release|x86.Build.0 = Release|x86
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Debug|x64.ActiveCfg = Debug|x64
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Debug|x64.Build.0 = Debug|x64
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Debug|x86.ActiveCfg = Debug|x86
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Debug|x86.Build.0 = Debug|x86
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Release|x64.ActiveCfg = Release|x64
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Release|x64.Build.0 = Release|x64
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Release|x86.ActiveCfg = Release|x86
+		{256D64E4-6A59-411B-9009-BAD1FB4C820D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
