@@ -1,0 +1,6 @@
+C:\WorkSpace\Solutions\POSRoot\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Application.deps.json
+C:\WorkSpace\Solutions\POSRoot\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Application.dll
+C:\WorkSpace\Solutions\POSRoot\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Application.pdb
+C:\WorkSpace\Solutions\POSRoot\POSONE.Application\obj\Debug\netcoreapp1.0\POSONE.Application.AssemblyInfo.cs
+C:\WorkSpace\Solutions\POSRoot\POSONE.Application\obj\Debug\netcoreapp1.0\POSONE.Application.dll
+C:\WorkSpace\Solutions\POSRoot\POSONE.Application\obj\Debug\netcoreapp1.0\POSONE.Application.pdb
