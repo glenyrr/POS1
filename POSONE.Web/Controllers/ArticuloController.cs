@@ -14,6 +14,7 @@ namespace POSONE.Web.Controllers
         public ArticuloController()
         {
             uOW = new UnitOfWork();
+            appService = new AppService();
         }
         public IActionResult Index()
         {
