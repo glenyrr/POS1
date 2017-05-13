@@ -1,21 +1,94 @@
-@model POSONE.Model.Entities.Articulo
+@model POSONE.Web.ViewModels.ArticuloViewModel
 
 @{
     ViewBag.Title = "Modificacion de Articulo";
 }
 
 
-<h2>Modificacion de Articulo</h2>
+<h2>Edicion de Articulo</h2>
 
-<div>
-    <div>    
-        @Html.LabelFor(model => model.Id)
-        @Html.DisplayFor(model => model.Id)
+@using (Html.BeginForm("Edit","Articulo"))
+{
+    <p class="alert alert-info">Todos los datos son <strong>Requeridos</strong>.</p>
+      <div class="form-group">    
+        @Html.LabelFor(m => m.Id)
+        @Html.DisplayFor(m => m.Id)
     </div>
-    <div>    
-        @Html.LabelFor(model => model.Descripcion)
-        @Html.EditorFor(model => model.Descripcion)
+
+    <div class="form-group">    
+        @Html.LabelFor(m => m.Descripcion)
+        @Html.TextBoxFor(m => m.Descripcion, new {@class = "form-control", autofocus = "autofocus"})
+        @Html.ValidationMessageFor(m=>m.Descripcion)
     </div>
-</div>
+
+    <div class="form-group">    
+        @Html.LabelFor(m => m.DescripcionLarga)
+        @Html.TextBoxFor(m => m.DescripcionLarga, new {@class = "form-control"})
+        @Html.ValidationMessageFor(m=>m.DescripcionLarga)
+    </div>
+
+     <div class="form-group">    
+        @Html.LabelFor(m => m.MarcaId)
+        @Html.DropDownListFor(m=> m.MarcaId, new SelectList(Model.Marcas,"Id","Nombre"),"",new {@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.MarcaId)
+    </div>
+
+    <div class="form-group">    
+        @Html.LabelFor(m => m.Umid)
+        @Html.DropDownListFor(m => m.Umid, new SelectList(Model.UnidadesMedida, "Id","Codigo"),"",new {@class = "form-control"})
+         @Html.ValidationMessageFor(m=>m.Umid)
+    </div>
+
+
+    <div class="form-group">    
+        @Html.LabelFor(m => m.CategoriaId)
+        @Html.DropDownListFor(m => m.CategoriaId, new SelectList(Model.Categorias, "Id","Nombre"),"",new {@class = "form-control"})
+         @Html.ValidationMessageFor(m=>m.CategoriaId)
+    </div>
+
+
+     <div class="form-group">    
+        @Html.LabelFor(m => m.TipoId)
+        @Html.DropDownListFor(m=> m.TipoId, new SelectList(Model.Tipos,"Id","Nombre"),"",new {@class="form-control"})
+         @Html.ValidationMessageFor(m=>m.TipoId)
+    </div>
+
+      <div class="form-group">    
+        @Html.LabelFor(m => m.IsvId)
+        @Html.DropDownListFor(m=> m.IsvId, new SelectList(Model.Isvs, "Id","Nombre"),"",new {@class="form-control"})
+    @Html.ValidationMessageFor(m=>m.IsvId)
+    </div>
+
+    <div class="form-group">
+        @Html.CheckBoxFor(m=> m.IncluyeImpuesto)
+        @Html.LabelFor(m=> m.IncluyeImpuesto)
+        @Html.ValidationMessageFor(m=>m.IncluyeImpuesto)
+    </div>
+
+     <div class="form-group">    
+        @Html.LabelFor(m => m.CostoPromedio)
+        @Html.TextBoxFor(m => m.CostoPromedio,"{0:0.00}", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m=>m.CostoPromedio)
+    </div>
+
+     <div class="form-group">    
+        @Html.LabelFor(m => m.PrecioVenta)
+        @Html.TextBoxFor(m => m.PrecioVenta,"{0:0.00}", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m=>m.PrecioVenta)
+    </div>
+
+     <div class="form-group">
+            @Html.CheckBoxFor(m=> m.Activo)
+            @Html.LabelFor(m=> m.Activo)
+            @Html.ValidationMessageFor(m=>m.Activo)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}
 
 @Html.ActionLink("Listado de Articulos", "Index") 
+
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

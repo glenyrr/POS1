@@ -81,17 +81,71 @@ namespace POSONE.Web.Controllers
                return StatusCode(400);
            }
 
-           var model = uOW.Articulo.Get(id);
+           // Recuperando el articulo
+           var articulo = uOW.Articulo.Get(id);
 
-           if (model == null)
+           if (articulo == null)
            {
                return NotFound("No se encontro el Articulo");
            }
 
-            return View(model);
+           // Mapeando el articulo al ViewModel
+            var articuloViewModel = new ArticuloViewModel
+            {
+                Id = articulo.Id,
+                Descripcion = articulo.Descripcion,
+                DescripcionLarga = articulo.DescripcionLarga,
+                MarcaId = articulo.MarcaId,
+                CategoriaId = articulo.CategoriaId,
+                TipoId = articulo.TipoId,
+                Umid = articulo.Umid,
+                IsvId = articulo.IsvId,
+                IncluyeImpuesto = articulo.IncluyeImpuesto,
+                CostoPromedio = articulo.CostoPromedio,
+                PrecioVenta = articulo.PrecioVenta,
+                Activo = articulo.Activo,
+                Categorias = uOW.Categoria.GetAll(),
+                Tipos = uOW.Tipo.GetAll(),
+                Marcas = uOW.Marca.GetAll(),
+                Isvs = uOW.Isv.GetAll(),
+                UnidadesMedida = uOW.UnidadMedida.GetAll()
+            };
+
+
+            return View(articuloViewModel);
         
         }
 
+           // Add a new Object via POST Request
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+         public IActionResult Edit(ArticuloViewModel articuloViewModel) 
+         {
+             if (!ModelState.IsValid)
+            {
+               return View("Edit",articuloViewModel);
+            }
+            
+            // Recuperar el articulo
+            var articulo = uOW.Articulo.Get(articuloViewModel.Id);
+
+            // Mapear los campos del ViewModel al Articulo
+            articulo.Descripcion = articuloViewModel.Descripcion;
+            articulo.DescripcionLarga = articuloViewModel.DescripcionLarga;
+            articulo.MarcaId = articuloViewModel.MarcaId;
+            articulo.CategoriaId = articuloViewModel.CategoriaId;
+            articulo.TipoId = articuloViewModel.TipoId;
+            articulo.Umid = articuloViewModel.Umid;
+            articulo.IsvId = articuloViewModel.IsvId;
+            articulo.IncluyeImpuesto = articuloViewModel.IncluyeImpuesto;
+            articulo.CostoPromedio = articuloViewModel.CostoPromedio;
+            articulo.PrecioVenta = articuloViewModel.PrecioVenta;
+            articulo.Activo = articuloViewModel.Activo;
+            
+            // Save Changes and return to index list
+            uOW.Complete();
+            return RedirectToAction("Detail",new {Id = articulo.Id}); 
+        }
 
         public IActionResult Detail(string id)
         {
