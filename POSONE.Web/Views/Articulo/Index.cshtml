@@ -16,6 +16,7 @@
                 <th>Articulo Id</th>
                 <th>Articulo</th>
                 <th>Cantidad</th>
+                <th>Activo</th>
                 <th>Action</th>
         </theader>
 
@@ -27,9 +28,10 @@
          <td>@item.Id</td>
          <td>@Html.ActionLink(item.DescripcionLarga, "Detail", new { id=item.Id }) </td>
          <td>@item.CostoPromedio</td>
+          <td>@item.Activo</td>
          <td>
               @Html.ActionLink("Detalle", "Detail", new { id=item.Id }) |    
-              @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
+              @Html.ActionLink("Editar", "Edit", new { id=item.Id })
          </td>
     </tr>
 }
