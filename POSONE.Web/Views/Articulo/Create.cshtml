@@ -8,6 +8,7 @@
 <h2>Creacion de Articulo</h2>
 @using (Html.BeginForm("Create","Articulo"))
 {
+      @Html.AntiForgeryToken()
     <p class="alert alert-info">Todos los datos son <strong>Requeridos</strong>.</p>
       <div class="form-group">    
         @Html.LabelFor(m => m.Id)

@@ -1,0 +1,34 @@
+@model POSONE.Model.Entities.Categoria
+
+@{
+    ViewBag.Title = "Edicion de Categorias";
+}
+
+<h2>Edicion de Categorias</h2>
+
+@using (Html.BeginForm("Edit","Categoria"))
+{
+
+    <p class="alert alert-info">Todos los datos son <strong>Requeridos</strong>.</p>
+    
+    <div class="form-group">    
+        @Html.LabelFor(m => m.Id)
+        @Html.DisplayFor(m => m.Id)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m=> m.Nombre)
+        @Html.TextBoxFor(m=> m.Nombre, new {@class = "form-control"})
+        @Html.ValidationMessageFor(m=>m.Nombre)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+}
+
+    @Html.ActionLink("Listado de Categoria", "Index") 
+
+    @section scripts {
+        <script src="~/lib/jquery-validation/dist/jquery-validate.min.js"></script>
+        <script src="~/jquery-validation-unobtrusive/jquery.validation.unobtrusive.min.js"></script>
+    }
