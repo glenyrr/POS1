@@ -1,0 +1,35 @@
+@using System.Collections.Generic
+@model IEnumerable<POSONE.Model.Entities.Marca>
+
+@{
+    ViewBag.Title = "Marcas de Articulos";
+}
+
+<h2>Lista de Marcas de Articulos</h2>
+
+@Html.ActionLink("Crear Marca", "Create") 
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+    </thead>
+
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Nombre</td>
+            <td>
+                @Html.ActionLink("Detalle","Detail",new {Id = item.Id}) |
+                @Html.ActionLink("Editar","Edit",new {Id = item.Id})
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="panel-footer">Count = @Model.Count()</div>
