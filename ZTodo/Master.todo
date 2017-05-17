@@ -1,0 +1,63 @@
+Mantenimientos:
+    Articulos:
+    ✔ Crear lista de Articulos @done (5/17/2017, 11:32:34 AM)
+    ✔ Agregar Articulo @done (5/17/2017, 11:32:46 AM)
+    ✔ Detalle de Articulo @done (5/17/2017, 11:32:49 AM)
+    ✔ Editar Articulo @done (5/17/2017, 11:32:50 AM)
+
+    Categorias:
+    ✔ Crear lista de Categorias @done (5/17/2017, 12:32:55 PM)
+    ✔ Agregar Categoria @done (5/17/2017, 5:44:47 PM)
+    ✔ Detalle de Categoria @done (5/17/2017, 12:33:00 PM)
+    ✔ Editar Categoria @done (5/17/2017, 12:33:01 PM)
+
+    Marcas:
+    ✔ Crear lista de Marcas @done (5/17/2017, 12:33:21 PM)
+    ✔ Agregar Marca @done (5/17/2017, 3:07:26 PM)
+    ✔ Detalle de Marca @done (5/17/2017, 4:18:20 PM)
+    ✔ Editar Marca @done (5/17/2017, 3:07:28 PM)
+
+    Tipos:
+    ☐ Crear lista de Tipos
+    ☐ Agregar Tipo
+    ☐ Detalle de Tipo
+    ☐ Editar Tipo
+
+    Impuestos:
+    ☐ Crear lista de Impuestos
+    ☐ Agregar Impuesto
+    ☐ Detalle de Impuesto
+    ☐ Editar Impuesto
+
+    Unidades de Medidas:
+    ☐ Crear lista de Unidades Medidas
+    ☐ Agregar Unidades
+    ☐ Detalle de Unidades
+    ☐ Editar Unidades
+
+
+
+* Anything with colon at the end of the line is a project title
+* You can nest projects inside each other
+* You can fold projects and sub projects
+Tasks:
+
+New Task:
+    * Press Cmd+Enter (Ctrl+Enter on Windows and Linux) to add a new task
+    * You can also use the Command pallette to create a new task by typing To Do:New Task
+    * If you are on a new line, it will create a new task on the current line
+    * If you are on a line with some text pressing new task shortcut will convert it to a task
+    * New tasks are nested as much as the previous task
+
+More Actions:
+    * Complete a task by pressing Alt+d @done
+    * Re-open a completed task by pressing Alt+d
+    * Cancel a task by pressing Alt+c @cancelled
+    * Complete a cancelled task by pressing Alt+d
+    * You can also use the Command pallette to complete or cancel a task by typing 
+      To Do:Complete Task or To Do:Cancel Task 
+
+Tagging:
+    * You can add tags using @ sign, like this @tag
+    * You can use following pre-existing tags to mark tasks @critical @high @low @today 
+    * Auto intellisense is provided to help you in finding tags

@@ -1,0 +1,27 @@
+@model POSONE.Model.Entities.Marca
+
+@{
+    ViewBag.Title = "Modificacion de Marca";
+}
+
+<h2>Modificar Marca de Articulos</h2>
+
+@using (Html.BeginForm("Edit","Marca"))
+{
+    @Html.AntiForgeryToken()
+    <p class="alert alert-info">Todos los datos son <strong>Requeridos</strong>.</p>
+       <div class="form-group">    
+            @Html.LabelFor(m => m.Id)
+            @Html.DisplayFor(m => m.Id)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m=> m.Nombre)
+            @Html.TextBoxFor(m=>m.Nombre, new {@class="form-control", autofocus="autofocus"})
+            @Html.ValidationMessageFor(m=>m.Nombre)
+        </div>
+
+        <button type="submit" class="btn btn-primary" >Guardar</button>
+
+        @Html.ActionLink("Lista de Marcas","Index");
+}

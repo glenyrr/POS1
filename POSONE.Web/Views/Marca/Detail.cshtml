@@ -1,0 +1,25 @@
+@model POSONE.Model.Entities.Marca
+
+@{
+    ViewBag.Title = "Detalle de Marca";
+}
+
+<h2>Detalle de Marcas</h2>
+
+@Html.ActionLink("Editar","Edit", new {Id = Model.Id})
+
+<form>
+    <div class="form-group">
+        @Html.LabelFor(m=>m.Id)
+        @Html.DisplayFor(m=> m.Id)
+    </div>
+
+    <div class = "form-group">
+        @Html.LabelFor(m=> m.Nombre)
+        @Html.DisplayFor(m=>m.Nombre)
+    </div>
+</form>
+
+<div>
+    @Html.ActionLink("Lista de Marcas","Index")
+</div>

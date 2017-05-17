@@ -57,7 +57,30 @@ namespace POSONE.Web.Controllers
             return RedirectToAction("Detail","Categoria", new {Id=categoria.Id});
         }
 
+        public IActionResult Create()
+        {
+            var model = new Categoria();
+            return View(model);
+        }
         
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Categoria categoria)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Create",categoria);
+            }
+
+            var categoriaEntity = new Categoria();
+
+            categoriaEntity.Nombre = categoria.Nombre;
+            uOW.Categoria.Add(categoriaEntity);
+
+            uOW.Complete();
+
+            return RedirectToAction("Index");
+        }
 
     }
 }

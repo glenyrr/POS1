@@ -55,6 +55,7 @@ namespace POSONE.Web.Controllers
 
             //Mapping the ViewModel with the Entity
             var articulo = new Articulo{
+                Id = articuloViewModel.Id,
                 Descripcion = articuloViewModel.Descripcion,
                 DescripcionLarga = articuloViewModel.DescripcionLarga,
                 MarcaId = articuloViewModel.MarcaId,
