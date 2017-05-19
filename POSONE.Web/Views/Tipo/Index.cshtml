@@ -1,0 +1,33 @@
+@model IEnumerable<POSONE.Model.Entities.Tipo>
+
+@{
+    ViewBag.Title = "Listado de Tipos de Articulos";
+}
+
+<h2>Lista de Tipos de Articulos</h2>
+@Html.ActionLink("Crear Tipo Articulo","Create")
+<table class="table table-hover">
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+    </thead>
+
+    <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nombre</td>
+                    <td>
+                         @Html.ActionLink("Detalle","Detail", new {Id = item.Id}) |
+                         
+                         @Html.ActionLink("Editar","Edit", new {Id = item.Id}) 
+                       
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+<div class="panel-footer">Count = @Model.Count()</div>

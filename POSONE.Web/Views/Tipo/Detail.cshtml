@@ -1,0 +1,22 @@
+@model POSONE.Model.Entities.Tipo
+
+@{
+    ViewBag.Title = "Editat Tipo de Articulos";
+}
+
+<h2>Editar Tipo de Articulo</h2>
+
+@Html.ActionLink("Editar","Edit",new {Id=Model.Id})
+<form>
+    <div class="form-group">
+        @Html.LabelFor(m=> m.Id)
+        @Html.DisplayFor(m=> m.Id)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m=> m.Nombre)
+        @Html.DisplayFor(m=> m.Nombre)
+    </div>
+</form>
+
+@Html.ActionLink("Lista Tipos de Articulos","Index")
