@@ -6,3 +6,11 @@ C:\WorkSpace\Solutions\POSRoot\POSONE.Application\obj\Debug\netcoreapp1.0\POSONE
 C:\WorkSpace\Solutions\POSRoot\POSONE.Application\obj\Debug\netcoreapp1.0\POSONE.Application.pdb
 c:\WorkSpace\Solutions\POSRoot\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Model.dll
 c:\WorkSpace\Solutions\POSRoot\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Model.pdb
+c:\WorkSpace\Git\POS1\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Application.deps.json
+c:\WorkSpace\Git\POS1\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Application.dll
+c:\WorkSpace\Git\POS1\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Application.pdb
+c:\WorkSpace\Git\POS1\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Model.dll
+c:\WorkSpace\Git\POS1\POSONE.Application\bin\Debug\netcoreapp1.0\POSONE.Model.pdb
+c:\WorkSpace\Git\POS1\POSONE.Application\obj\Debug\netcoreapp1.0\POSONE.Application.AssemblyInfo.cs
+c:\WorkSpace\Git\POS1\POSONE.Application\obj\Debug\netcoreapp1.0\POSONE.Application.dll
+c:\WorkSpace\Git\POS1\POSONE.Application\obj\Debug\netcoreapp1.0\POSONE.Application.pdb
